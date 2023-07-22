@@ -1,0 +1,223 @@
+@import 'feature.scss';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    margin-bottom: 0;
+    color: $paraColor;
+    font-size: 1.6rem;
+}
+
+body{
+    font-family: $NunitoFont;
+    letter-spacing: .5px;
+    background-color: #1F2235;
+    font-size: 1.6rem;
+    position: relative;
+    background-image: url('../images/bg-paterns.png');
+}
+
+h2{
+    font-size: 3.5rem;
+    color: $paraColor;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+h3{
+    text-transform: capitalize;
+    font-weight: 600;
+    line-height: 1.4;
+    font-family: $SairaFont;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+h4{
+    font-size: 2rem;
+    font-family: $SpaceMonoFont;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    max-width: 1140px;
+}
+
+.text-primary{
+    color: $themeColor !important;
+}
+
+.btn{
+    font-size: 1.3rem;
+    font-weight: 600;
+    height: 4.3rem;
+    line-height: 4.3rem;
+    padding: 0 3rem;
+    border-radius: 0;
+    font-family: $SairaFont;
+    display: inline-flex;
+    align-items: center;
+    text-transform: capitalize;
+    span{
+        margin-right: 5px;
+    }
+    svg{
+        font-size: 1.6rem;
+    }
+    &:hover{
+        color: $paraColor;
+        background: transparent !important;
+    }
+}
+
+
+.btn-outline-secondary{
+    border-color: #2f324a;
+    position: relative;
+    @include borderHover;
+}
+
+.form-group{
+    margin-bottom: 2rem;
+}
+
+.form-control {
+    height: 5rem;
+    border: 1px solid #2f324a;
+    background-color: transparent !important;
+    border-radius: 0;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: $NunitoFont;
+    font-weight: 400;
+    color: #b1b1b1 !important;
+
+    &:focus {
+        border-color: $themeColor;
+        box-shadow: none;
+    }
+}
+
+.submitBtn {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    background: #23263a;
+    color: #fff;
+    height: 5rem;
+    line-height: 5rem;
+    font-family: $SairaFont;
+    font-weight: 500;
+    font-size: 1.6rem;
+    position: relative;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all .4s ease-in-out !important;
+
+    svg {
+        font-size: 1.8rem;
+    }
+
+    span {
+        margin-left: 5px;
+    }
+
+    &::before {
+        @include afterCondition;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+
+    &:hover {
+        background-color: $themeColor;
+
+        &::before {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            background: #23263a !important;
+        }
+    }
+}
+
+.common-section-padding{
+    padding-top: 8rem;
+}
+
+.commonSecTop{
+    position: relative;
+    &::after{
+        @include afterCondition;
+        height: 50px;
+        width: 1px;
+        position: absolute;
+        top: 50px;
+        transform: translate(-50%, 0%);
+        left: 50%;
+        background: $themeColor;
+        opacity: 0.8;
+    }
+}
+
+.section-heading{
+    margin-bottom: 5.5rem;
+    h2{
+        position: relative;
+        display: inline-block;
+        text-transform: capitalize;
+        &::before, &::after{
+            @include afterCondition;
+            background: #ff3d4f;
+            position: absolute;
+            bottom: -1rem;
+            height: 4px;
+        }
+        &::before{
+            width: 3rem;
+            right: 2rem;
+            border-bottom-left-radius: 100px;
+        }
+        &::after{
+            width: 15px;
+            right: 0;
+            border-top-right-radius: 100px;
+        }
+    }
+}
+
+.pageBottom-margin{
+    margin-bottom: 8rem;
+}

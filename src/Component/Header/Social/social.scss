@@ -1,0 +1,54 @@
+@import "../../../Assets/scss/common.scss";
+
+.social-info-wrapper{
+    position: fixed;
+    left: 2rem;
+    top: calc(50% - 5rem);
+    transform: translateY(-50%);
+    z-index: 1;
+    ul{
+        padding-left: 3px;
+        margin-bottom: 1.5rem;
+        li{
+            list-style: none;
+            margin: 1.2rem 0;
+            font-size: 1.4rem;
+            
+            a{
+                color: $paraColor;
+                transition: all .4s;
+                &:hover{
+                    transform: scale(1.2);
+                    color: #fff;
+                }
+            }
+            
+        }
+    }
+    p.followCaps{
+        top: 70px;
+        left: -24px;
+        width: 68px;
+        height: 20px;
+        line-height: 1.2;
+        white-space: nowrap;
+        position: relative;
+        transform: rotate(-90deg);
+        margin: 0;
+        font-family: "Saira";
+        letter-spacing: 0.5px;
+        color: #9da1a5;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 14px;
+        &:after{
+            @include afterCondition;
+            top: 9px;
+            right: -51px;
+            width: 40px;
+            height: 1px;
+            position: absolute;
+            background-color: #2f324a;
+        }
+    }
+}
